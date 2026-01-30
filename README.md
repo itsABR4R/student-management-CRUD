@@ -44,6 +44,7 @@ This application demonstrates CRUD (Create, Read, Update, Delete) operations on 
 ## API Endpoints
 
 | Method | Endpoint | Description |
+|--------|----------|-------------|
 | POST | `/students` | Add a new student |
 | GET | `/students` | Retrieve all students |
 | GET | `/students/{id}` | Retrieve a student by ID |
