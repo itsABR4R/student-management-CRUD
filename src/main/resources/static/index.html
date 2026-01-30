@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Management System - CRUD Application">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-top">
+                    <div class="logo">
+                        <span class="logo-icon">🎓</span>
+                        <h1>Student Management System</h1>
+                    </div>
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-icon sun">☀️</span>
+                        <span class="theme-icon moon">🌙</span>
+                        <div class="toggle-slider"></div>
+                    </button>
+                </div>
+                <p class="subtitle">Manage student records with ease</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Section -->
+            <section class="form-section">
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2 id="formTitle">
+                            <span class="header-icon">➕</span>
+                            Add New Student
+                        </h2>
+                    </div>
+                    <form id="studentForm" class="student-form">
+                        <input type="hidden" id="studentId">
+
+                        <div class="form-group">
+                            <label for="name">
+                                <span class="label-icon">👤</span>
+                                Full Name
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Enter student name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <span class="label-icon">📧</span>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">
+                                <span class="label-icon">🏛️</span>
+                                Department
+                            </label>
+                            <input type="text" id="department" name="department" placeholder="Enter department"
+                                required>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="submitBtn" class="btn btn-primary">
+                                <span class="btn-icon">+</span>
+                                Add Student
+                            </button>
+                            <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;">
+                                <span class="btn-icon">✕</span>
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Table Section -->
+            <section class="table-section">
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h2>
+                            <span class="header-icon">📋</span>
+                            Student Records
+                        </h2>
+                        <div class="record-count">
+                            <span class="count-icon">👥</span>
+                            <span id="studentCount">0</span> students
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="studentTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Department</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTableBody">
+                                <!-- Student records will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                        <div id="emptyState" class="empty-state">
+                            <span class="empty-icon">📚</span>
+                            <p>No students found</p>
+                            <p class="empty-subtitle">Add a new student to get started</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Student CRUD Application &copy; 2024 | Built with Spring Boot</p>
+        </footer>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="modal-icon" id="modalIcon">⚠️</span>
+                <h3 id="modalTitle">Confirm Action</h3>
+            </div>
+            <p class="modal-message" id="modalMessage">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn btn-danger" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
