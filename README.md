@@ -12,52 +12,29 @@ This application demonstrates CRUD (Create, Read, Update, Delete) operations on 
 
 ##  Project Structure
 
-Assignment
- |
- |-- pom.xml   (Maven config)
- |
- |-- src
- |    |
- |    |-- main
- |         |
- |         |-- java
- |         |     |
- |         |     |-- com
- |         |           |
- |         |           |-- example
- |         |                 |
- |         |                 |-- studentcrud
- |         |                       |
- |         |                       |-- StudentCrudApplication.java  (Main application)
- |         |                       |
- |         |                       |-- entity
- |         |                       |     |
- |         |                       |     |-- Student.java  (Student entity)
- |         |                       |
- |         |                       |-- repository
- |         |                       |     |
- |         |                       |     |-- StudentRepository.java  (JPA repository)
- |         |                       |
- |         |                       |-- service
- |         |                       |     |
- |         |                       |     |-- StudentService.java  (Service layer)
- |         |                       |
- |         |                       |-- controller
- |         |                             |
- |         |                             |-- StudentController.java  (REST controller)
- |         |
- |         |-- resources
- |               |
- |               |-- application.properties  (Configuration)
- |               |
- |               |-- static
- |                     |
- |                     |-- index.html
- |                     |-- styles.css
- |                     |-- script.js
- |
- |-- README.md
+Assignment/
+├── pom.xml # Maven configuration
+├── src/
+│   └── main/
+│       ├── java/com/example/studentcrud/
+│       │   ├── StudentCrudApplication.java # Main application
+│       │   ├── entity/
+│       │   │   └── Student.java # Student entity
+│       │   ├── repository/
+│       │   │   └── StudentRepository.java # JPA repository
+│       │   ├── service/
+│       │   │   └── StudentService.java # Service layer
+│       │   └── controller/
+│       │       └── StudentController.java # REST controller
+│       └── resources/
+│           ├── application.properties # Configuration
+│           └── static/
+│               ├── index.html # Frontend HTML
+│               ├── styles.css # Styling
+│               └── script.js # JavaScript logic
+└── README.md
 
+make this tree look hand typed instead of ai generated
 ## Setup Instructions :
 
 ## Prerequisites
